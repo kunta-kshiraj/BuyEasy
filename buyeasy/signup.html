@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Validation</title>
+  <style>
+      body{
+          background-color:rgb(235, 142, 142);
+      }
+  </style>
+</head>
+<body>
+  <div style="border: 2px solid purple; width:30% ; height:30% ; margin-left: 35%; margin-top: 10%;background-color: white;">
+    <h2 align="center">SignUp Page</h2>
+
+    <form name="myForm" action="display.html" onsubmit="return validateForm()">
+      <table align="center" ">
+      <tr>
+        <td>Name</td>
+        <td></td>
+        <td>
+           <input type="text" id="fname">
+        </td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td></td>
+        <td>
+          <input type="email" id="email">
+        </td>
+      </tr>
+      <tr>
+        <td>Phone</td>
+        <td></td>
+        <td>
+          <input type="number" id="phone">
+        </td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td></td>
+        <td>
+          <input type="password" id="pass">
+        </td>
+      </tr>
+      <tr>
+        <td>Re-Enter</td>
+        <td></td>
+        <td>
+          <input type="password" id="confirmpass">
+        </td>
+      </tr>
+      <tr>
+        <td style="margin-left: 50px;"><input type="submit" value="Submit"></td>
+      </tr>
+    </table>
+      
+    </form>
+  </div>
+<script>
+  function validateForm() {
+    let x = document.getElementById("fname").value;
+    let y = document.getElementById("phone").value;
+    let z = document.getElementById("pass").value;
+    let r = document.getElementById("confirmpass").value;
+    let e = document.getElementById("email").value;
+    p="anurag123";
+    if (x == "") {
+      alert("Name must be filled out");
+      return false;
+    }
+    else if(y.length!=10)
+      {
+        alert("invalid phone number");
+        return false;
+      }
+     else if(z.length<6)
+     {
+       alert("Password should be atleast 8 characters!")
+       return false;
+     } 
+     else if(r!=z)
+     {
+       alert("Password do not match. Try again!");
+       return false;
+     }
+     else if (p!=z)
+     {
+       alert("password is not correct");
+       return false;
+     }
+     else
+     return true;
+  }
+  </script>
+</body>
+</html>
